@@ -10,4 +10,6 @@ public interface DAOEtudiant extends DAO<Etudiant, Integer> {
     List<Etudiant> findByAnnee(int annee);
     List<Etudiant> findByGroupe(int groupe);
     List<Etudiant> findByNom(String nomEt);
+    List<Etudiant> FindAll();
+    Etudiant getById(int id);
 }

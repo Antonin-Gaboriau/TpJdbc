@@ -5,7 +5,7 @@ import fr.univ_amu.iut.beans.Etudiant;
 
 import java.util.List;
 
-public class DAOEtudiantJDBC implements DAOEtudiant {
+public abstract class DAOEtudiantJDBC implements DAOEtudiant {
     @Override
     public int computeNbEtudiant() {
         return 0;

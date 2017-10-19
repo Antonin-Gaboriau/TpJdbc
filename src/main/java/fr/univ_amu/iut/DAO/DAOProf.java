@@ -5,7 +5,7 @@ import fr.univ_amu.iut.beans.Prof;
 
 import java.util.List;
 
-public interface DAOProf extends DAO<Prof> {
+public interface DAOProf extends DAO<Prof, Integer> {
     List<Prof> findByNom(String nom);
 
     List<Prof> findMatSpec(Module matSpec);

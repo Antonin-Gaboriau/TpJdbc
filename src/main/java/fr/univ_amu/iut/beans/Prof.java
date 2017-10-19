@@ -1,9 +1,9 @@
 package fr.univ_amu.iut.beans;
 
 
+import java.io.Serializable;
 
-
-public class Prof{
+public class Prof implements Serializable{
 	private int numProf;
 	private String nomProf;
 	private String prenomProf;
@@ -13,6 +13,34 @@ public class Prof{
 	private Module matSpec;
 
 	public Prof() {
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Prof prof = (Prof) o;
+
+		if (numProf != prof.numProf) return false;
+		if (nomProf != null ? !nomProf.equals(prof.nomProf) : prof.nomProf != null) return false;
+		if (prenomProf != null ? !prenomProf.equals(prof.prenomProf) : prof.prenomProf != null) return false;
+		if (adrProf != null ? !adrProf.equals(prof.adrProf) : prof.adrProf != null) return false;
+		if (cpProf != null ? !cpProf.equals(prof.cpProf) : prof.cpProf != null) return false;
+		if (villeProf != null ? !villeProf.equals(prof.villeProf) : prof.villeProf != null) return false;
+		return matSpec != null ? matSpec.equals(prof.matSpec) : prof.matSpec == null;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = numProf;
+		result = 31 * result + (nomProf != null ? nomProf.hashCode() : 0);
+		result = 31 * result + (prenomProf != null ? prenomProf.hashCode() : 0);
+		result = 31 * result + (adrProf != null ? adrProf.hashCode() : 0);
+		result = 31 * result + (cpProf != null ? cpProf.hashCode() : 0);
+		result = 31 * result + (villeProf != null ? villeProf.hashCode() : 0);
+		result = 31 * result + (matSpec != null ? matSpec.hashCode() : 0);
+		return result;
 	}
 
 	public String getAdrProf() {

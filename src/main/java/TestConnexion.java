@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class TestConnexion {
     // La requete de test
-    static final String req = "SELECT NUM_ET, NOM_ET, PRENOM_ET " +
+    static final String req = "SELECT NUM_ET, NOM_ET, PRENOM_ET, CP_ET, VILLE_ET, ANNEE, GROUPE " +
             "FROM ETUDIANT " +
             "WHERE VILLE_ET = 'AIX-EN-PROVENCE'";
 

@@ -1,8 +1,9 @@
 package fr.univ_amu.iut.beans;
 
+import java.io.Serializable;
 import java.util.Collection;
 
-public class Module{
+public class Module implements Serializable{
 	private String code;
 	private String libelle;
 	private int hCoursPrev;
@@ -17,6 +18,44 @@ public class Module{
 	private Collection<Prof> specialistes;
 	
 	public Module() {
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Module module = (Module) o;
+
+		if (hCoursPrev != module.hCoursPrev) return false;
+		if (hCoursRea != module.hCoursRea) return false;
+		if (hTpPrev != module.hTpPrev) return false;
+		if (hTpRea != module.hTpRea) return false;
+		if (coefTest != module.coefTest) return false;
+		if (coefCc != module.coefCc) return false;
+		if (code != null ? !code.equals(module.code) : module.code != null) return false;
+		if (libelle != null ? !libelle.equals(module.libelle) : module.libelle != null) return false;
+		if (discipline != null ? !discipline.equals(module.discipline) : module.discipline != null) return false;
+		if (responsable != null ? !responsable.equals(module.responsable) : module.responsable != null) return false;
+		if (pere != null ? !pere.equals(module.pere) : module.pere != null) return false;
+		return specialistes != null ? specialistes.equals(module.specialistes) : module.specialistes == null;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = code != null ? code.hashCode() : 0;
+		result = 31 * result + (libelle != null ? libelle.hashCode() : 0);
+		result = 31 * result + hCoursPrev;
+		result = 31 * result + hCoursRea;
+		result = 31 * result + hTpPrev;
+		result = 31 * result + hTpRea;
+		result = 31 * result + (discipline != null ? discipline.hashCode() : 0);
+		result = 31 * result + coefTest;
+		result = 31 * result + coefCc;
+		result = 31 * result + (responsable != null ? responsable.hashCode() : 0);
+		result = 31 * result + (pere != null ? pere.hashCode() : 0);
+		result = 31 * result + (specialistes != null ? specialistes.hashCode() : 0);
+		return result;
 	}
 
 	public String getCode() {

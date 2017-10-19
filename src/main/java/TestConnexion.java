@@ -1,10 +1,7 @@
 import java.sql.*;
-/**
- * Created by g16003568 on 27/09/17.
- */
 
 public class TestConnexion {
-    // La requete de test
+
     static final String req = "SELECT NUM_ET, NOM_ET, PRENOM_ET, CP_ET, VILLE_ET, ANNEE, GROUPE " +
             "FROM ETUDIANT " +
             "WHERE VILLE_ET = 'AIX-EN-PROVENCE'";

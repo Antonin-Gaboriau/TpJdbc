@@ -1,6 +1,8 @@
 package fr.univ_amu.iut.beans;
 
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Collection;
 
 public class Module implements Serializable{
